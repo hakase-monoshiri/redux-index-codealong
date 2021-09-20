@@ -6,11 +6,13 @@ class CreateTodo extends Component {
     text: ''
   }
 
-  handleChange = event => {
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.addTodo(this.state)
     this.setState({
-      text: event.target.value
-    });
-  };
+      text: "",
+    })
+  }
 
   handleSubmit = event => {
     event.preventDefault();
